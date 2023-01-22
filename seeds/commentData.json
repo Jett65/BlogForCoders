@@ -1,0 +1,14 @@
+[
+    {
+        "content": "I love this post",
+        "post_id": 1
+    },
+    {
+        "content": "This is so funny",
+        "post_id": 2
+    },
+    {
+        "content": "I hate this post",
+        "post_id": 1
+    }
+]

@@ -1,0 +1,17 @@
+[
+    {
+        "title": "First",
+        "content": "This is my first post",
+        "user_id": 1
+    },
+    {
+        "title": "Second",
+        "content": "This is the second post",
+        "user_id": 2
+    },
+    {
+        "title": "Last",
+        "content": "This is my last post",
+        "user_id": 1
+    }
+]
