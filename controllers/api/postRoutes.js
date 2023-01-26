@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const { Post } = require("../../models");
-const isAuth = require(".../.../utils/auth");
+const isAuth = require("../../utils/auth.js");
 
 router.post("/",async (req,res) => {
     try {
@@ -34,4 +34,4 @@ router.delete("/:id",isAuth,async (roq,res) => {
     }
 });
 
-router.delete;
+module.exports = router;

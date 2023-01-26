@@ -1,27 +1,15 @@
 const router = require('express').Router();
-const { Model } = require('sequelize');
 const { User,Post,Comment } = require('../models');
 const isAuth = require('../utils/auth');
 
 router.get("/",async (req,res) => {
     try {
-        const data = await Post.findAll({
-            include: [
-                {
-                    model: User,
-                    attributes: ["name"]
-                }
+        // const data = await Post.findAll();
 
-            ]
-        });
+        // const posts = data.map((post) => post.get({ plain: true }));
 
-        const post = data.map((post) => post.get({ plain: true }));
-
-        res.render("homepage",{
-            post,
-            logged_in: req.session.logged_in
-        });
-    } catch (err1) {
+        res.render("homepage");
+    } catch (err) {
         res.status(500).json(err);
     }
 });
@@ -49,7 +37,7 @@ router.get("/post/:id",async (req,res) => {
     }
 });
 
-router.get("/profile",withAuth,async (req,res) => {
+router.get("/profile",isAuth,async (req,res) => {
     try {
         const data = await User.findByPk(req.session.user_id,{
             attributes: { exclude: ["password"] },
